@@ -1,0 +1,48 @@
+{
+  "builders": [
+    {
+      "CPUs": "{{user `vm-cpu-num`}}",
+      "RAM": "{{user `vm-mem-size`}}",
+      "RAM_reserve_all": false,
+      "boot_command": [
+        "<esc><wait>",
+        "linux ks=hd:fd0:/ks.cfg<enter>"
+      ],
+      "boot_order": "disk,cdrom,floppy",
+      "boot_wait": "10s",
+      "cluster": "{{user `vsphere-cluster`}}",
+      "convert_to_template": true,
+      "datacenter": "{{user `vsphere-datacenter`}}",
+      "datastore": "{{user `vsphere-datastore`}}",
+      "disk_controller_type": "pvscsi",
+      "floppy_files": [
+        "ks.cfg"
+      ],
+      "guest_os_type": "centos7_64Guest",
+      "insecure_connection": "true",
+      "iso_paths": [
+        "{{user `iso_url`}}"
+      ],
+      "network_adapters": [
+        {
+          "network": "{{user `vsphere-network`}}",
+          "network_card": "{{user `vsphere-network-card`}}"
+        }
+      ],
+      "notes": "Build via Packer",
+      "password": "{{user `vsphere-password`}}",
+      "ssh_password": "{{user `os-password`}}",
+      "ssh_username": "{{user `os-user`}}",
+      "storage": [
+        {
+          "disk_size": "{{user `vm-disk-size`}}",
+          "disk_thin_provisioned": true
+        }
+      ],
+      "type": "vsphere-iso",
+      "username": "{{user `vsphere-user`}}",
+      "vcenter_server": "{{user `vsphere-server`}}",
+      "vm_name": "{{user `vm-name`}}"
+    }
+  ]
+}

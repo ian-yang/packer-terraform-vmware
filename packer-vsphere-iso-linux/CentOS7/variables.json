@@ -1,0 +1,17 @@
+{
+"iso_url": "[vm-storage]  os-image/CentOS-7-x86_64-DVD-2009.iso",
+"vm-cpu-num": "1",
+"vm-disk-size": "25600",
+"vm-mem-size": "1024",
+"vm-name": "CentOS7-Template",
+"vsphere-cluster": "homelab",
+"vsphere-datacenter": "Home-Lab",
+"vsphere-datastore": "vm-storage",
+"vsphere-network": "VM Network",
+"vsphere-network-card": "vmxnet3",
+"vsphere-password": "vsphere-password",
+"vsphere-server": "vsphere server host",
+"vsphere-user": "administrator",
+"os-user": "root",
+"os-password": "server"
+}
